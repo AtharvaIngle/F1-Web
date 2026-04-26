@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Hub | Race Dashboard & Game</title>
+    <meta name="description" content="A premium F1 dashboard and Lights Out reaction game.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Racing+Sans+One&display=swap" rel="stylesheet">
+    <!-- Using Boxicons for lightweight icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- Header & Navigation -->
+        <header class="top-nav">
+            <div class="brand">
+                <span class="f1-logo">F1</span>
+                <h1>HUB</h1>
+            </div>
+            <nav class="tabs">
+                <button class="tab-btn active" data-target="schedule">
+                    <i class='bx bx-calendar'></i> Race Schedule
+                </button>
+                <button class="tab-btn" data-target="driver-details">
+                    <i class='bx bx-trophy'></i> 2026 Standings
+                </button>
+                <button class="tab-btn" data-target="mini-game">
+                    <i class='bx bx-stopwatch'></i> Lights Out
+                </button>
+            </nav>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="content-area">
+            
+            <!-- Tab 1: 2026 Race Schedule -->
+            <section id="schedule" class="tab-content active">
+                <header class="section-header">
+                    <h2>2026 Race Schedule</h2>
+                    <p class="subtitle">All times in Indian Standard Time (IST)</p>
+                </header>
+                
+                <div class="leaderboard-container">
+                    <div class="leaderboard-header schedule-header">
+                        <span class="col-rnd">RND</span>
+                        <span class="col-gp">GRAND PRIX</span>
+                        <span class="col-date">DATE</span>
+                        <span class="col-time">RACE TIME (IST)</span>
+                    </div>
+                    <ul id="schedule-list" class="leaderboard-list">
+                        <!-- Populated by JS -->
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Tab 2: 2026 Driver Standings -->
+            <section id="driver-details" class="tab-content">
+                <header class="section-header">
+                    <h2>2026 Driver Standings</h2>
+                    <p class="subtitle">Official Lineup & Points</p>
+                </header>
+                
+                <div class="driver-grid" id="driver-grid">
+                    <!-- Populated by JS -->
+                </div>
+            </section>
+
+            <!-- Tab 3: Mini Game (Lights Out) -->
+            <section id="mini-game" class="tab-content">
+                <div class="game-container">
+                    <header class="section-header center">
+                        <h2>Lights Out!</h2>
+                        <p class="subtitle">Test your F1 driver reaction time</p>
+                    </header>
+
+                    <div class="lights-container">
+                        <div class="light-group" id="group-1">
+                            <div class="light light-top"></div>
+                            <div class="light light-bottom red"></div>
+                        </div>
+                        <div class="light-group" id="group-2">
+                            <div class="light light-top"></div>
+                            <div class="light light-bottom red"></div>
+                        </div>
+                        <div class="light-group" id="group-3">
+                            <div class="light light-top"></div>
+                            <div class="light light-bottom red"></div>
+                        </div>
+                        <div class="light-group" id="group-4">
+                            <div class="light light-top"></div>
+                            <div class="light light-bottom red"></div>
+                        </div>
+                        <div class="light-group" id="group-5">
+                            <div class="light light-top"></div>
+                            <div class="light light-bottom red"></div>
+                        </div>
+                    </div>
+
+                    <div class="game-controls">
+                        <button id="startGameBtn" class="action-btn">Start Procedure</button>
+                    </div>
+
+                    <div class="game-result">
+                        <h3 id="resultText">Waiting to start...</h3>
+                        <p id="resultTime" class="hidden"><span class="time-value">0.000</span> s</p>
+                        <p id="bestTime">Best Time: <span>--</span> s</p>
+                    </div>
+                    
+                    <div id="clickArea" class="click-area hidden">
+                        <span>TAP ANYWHERE WHEN LIGHTS GO OUT</span>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
